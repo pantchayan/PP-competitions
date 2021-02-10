@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
 // CODE FOR PP BATCH 1 CONTEST
 public class Feb10 {
     static Scanner sc = new Scanner(System.in);
@@ -98,6 +99,31 @@ public class Feb10 {
         }
     }
 
+    // Recursive =================================================
+    public static void easyPatternRecur(int n, int k) {
+        if(n%2 == 0 && k == n) {
+            return;
+        }
+        int flag = 0;
+        if(n%2 ==1 && k == n - 1) {
+            flag = 1;
+        }
+        
+        for(int i = n*k + 1 ; i < n*k + 1 + n ; i++) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        if(flag==1) {
+            return;
+        }
+        easyPatternRecur(n, k + 2);
+            
+        for(int i = n*(k + 1) + 1 ; i < n*(k + 1) + 1 + n ; i++) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+
     // QUES 3 ====================================================
 
     public static void madAngles(int n) {
@@ -178,7 +204,7 @@ public class Feb10 {
     }
 
     // QUES 5 ====================================================
-    
+
     public static void recursiveDilemma(int n) {
         recursiveCode(n);
     }
