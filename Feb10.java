@@ -104,16 +104,16 @@ public class Feb10 {
         if(n%2 == 0 && k == n) {
             return;
         }
-        int flag = 0;
+        boolean flag = false;
         if(n%2 ==1 && k == n - 1) {
-            flag = 1;
+            flag = true;
         }
         
         for(int i = n*k + 1 ; i < n*k + 1 + n ; i++) {
             System.out.print(i+" ");
         }
         System.out.println();
-        if(flag==1) {
+        if(flag) {
             return;
         }
         easyPatternRecur(n, k + 2);
